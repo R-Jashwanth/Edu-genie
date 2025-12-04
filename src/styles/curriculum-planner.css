@@ -1,0 +1,207 @@
+/* Curriculum Planner Specific Styles */
+
+/* Draggable Items */
+.draggable-item {
+  cursor: grab;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.draggable-item:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.draggable-item.dragging {
+  cursor: grabbing !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  border-color: hsl(var(--primary)) !important;
+  transform: scale(1.02);
+  opacity: 0.9;
+  z-index: 50 !important;
+}
+
+/* Content type indicators */
+.content-type-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.content-type-indicator.lesson {
+  background-color: #10b981; /* emerald-500 */
+}
+
+.content-type-indicator.lab {
+  background-color: #3b82f6; /* blue-500 */
+}
+
+.content-type-indicator.assessment {
+  background-color: #f59e0b; /* amber-500 */
+}
+
+/* Droppable Areas */
+.droppable-area {
+  transition: all 0.15s ease;
+  min-height: 100px;
+  position: relative;
+}
+
+.droppable-area.active {
+  background-color: hsl(var(--primary) / 0.08);
+}
+
+.droppable-area.can-drop {
+  background-color: hsl(var(--primary) / 0.1);
+  box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.2);
+}
+
+/* Week day header */
+.week-day-header {
+  background-color: hsl(var(--muted) / 0.4);
+  border-bottom: 1px solid hsl(var(--border) / 0.6);
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  padding: 8px 12px;
+  font-weight: 500;
+}
+
+/* Item styling by type */
+[data-type="lesson"] .item-title {
+  color: hsl(var(--foreground) / 0.9);
+  font-weight: 500;
+}
+
+[data-type="lab"] .item-title {
+  color: hsl(var(--foreground) / 0.9);
+  font-weight: 500;
+}
+
+[data-type="assessment"] .item-title {
+  color: hsl(var(--foreground) / 0.9);
+  font-weight: 500;
+}
+
+/* Improve visibility of action buttons on hover */
+.item-actions {
+  opacity: 0.3;
+  transition: opacity 0.15s ease;
+}
+
+.draggable-item:hover .item-actions {
+  opacity: 1;
+}
+
+/* Add subtle animation for drag handle on hover */
+.drag-handle {
+  transition: transform 0.15s ease, color 0.15s ease;
+  color: hsl(var(--muted-foreground) / 0.7);
+}
+
+.draggable-item:hover .drag-handle {
+  color: hsl(var(--primary) / 0.7);
+}
+
+/* Clean up borders and spacing */
+.border-muted\/60 {
+  border-color: hsl(var(--border) / 0.6) !important;
+}
+
+/* Add sleek animation for drop areas */
+@keyframes pulseDropArea {
+  0% {
+    background-color: hsl(var(--primary) / 0.05);
+  }
+  50% {
+    background-color: hsl(var(--primary) / 0.1);
+  }
+  100% {
+    background-color: hsl(var(--primary) / 0.05);
+  }
+}
+
+.droppable-area.active.can-drop {
+  animation: pulseDropArea 1.5s infinite;
+}
+
+/* Empty state styling */
+.droppable-area:empty::before {
+  content: "Drop items here";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground) / 0.7);
+  pointer-events: none;
+}
+
+/* Item types left border styling */
+[data-type="lesson"].draggable-item {
+  border-left-color: #10b981 !important; /* emerald-500 */
+  border-left-width: 4px !important;
+}
+
+[data-type="lab"].draggable-item {
+  border-left-color: #3b82f6 !important; /* blue-500 */
+  border-left-width: 4px !important;
+}
+
+[data-type="assessment"].draggable-item {
+  border-left-color: #f59e0b !important; /* amber-500 */
+  border-left-width: 4px !important;
+}
+
+/* Enlarge daily schedule view */
+@media (min-width: 768px) {
+  .week-day-header {
+    font-size: 0.9rem;
+  }
+  
+  .droppable-area {
+    min-height: 550px !important;
+  }
+}
+
+/* Make the schedule container take full height */
+html, body, #root, #__next {
+  height: 100%;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Enhanced visual styling for scheduled items */
+.draggable-item {
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.draggable-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Print styles */
+@media print {
+  .draggable-item {
+    break-inside: avoid;
+    border: 1px solid #ddd !important;
+    margin-bottom: 0.5rem !important;
+    page-break-inside: avoid;
+  }
+  
+  .item-actions,
+  .drag-handle {
+    display: none !important;
+  }
+} 
