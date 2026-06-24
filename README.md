@@ -29,7 +29,7 @@ EduGenie is a powerful educational content generation platform that helps teache
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/R-Jashwanth/Edu-genie
 cd edu-genie
 ```
 
@@ -111,7 +111,7 @@ If you encounter path issues when trying to run the backend:
 
 1. Make sure you're in the correct directory:
    ```
-   cd D:\EdGenie\edu-genie-lab-spark-921667fd
+   cd D:\EduGenie
    ```
 
 2. Run the backend using the batch file:
