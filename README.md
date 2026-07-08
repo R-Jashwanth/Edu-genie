@@ -1,5 +1,14 @@
 # EduGenie - AI-Powered Educational Content Generator
 
+[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/R-Jashwanth/Edu-genie/blob/main/LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-90.5%25-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Python](https://img.shields.io/badge/Python-4.5%25-green?logo=python)](https://www.python.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-2.3%25-yellow?logo=javascript)](https://www.javascript.com/)
+[![React](https://img.shields.io/badge/React-Frontend-61DAFB?logo=react)](https://reactjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-16+-339933?logo=node.js)](https://nodejs.org/)
+[![Python Version](https://img.shields.io/badge/Python-3.8+-blue?logo=python)](https://www.python.org/)
+
 EduGenie is a powerful educational content generation platform that helps teachers create lesson plans, assessments, and other educational materials using AI models from OpenRouter.
 
 ## Features
